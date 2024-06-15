@@ -113,6 +113,14 @@ nanti akan ada tampilan seperti
  <img height=300 src="./app_launch.png" alt="Project logo"></a>
 </p>
 
+#### API SETUP
+
+jalankan ini didalam project CI4 (ciFlutter_be)
+
+```
+php spark serve
+```
+
 <!-- ## 🔧 Running the tests <a name = "tests"></a>
 Explain how to run the automated tests for this system.
 
