@@ -1,0 +1,29 @@
+dartdoc:
+  categories:
+    "Helpers":
+      markdown: doc/First.md
+      name: Helpers
+    "BLOC":
+      markdown: doc/Second.md
+      name: Business Logic Component
+    "Widget":
+      markdown: doc/Third.md
+      name: Widget
+    "Model":
+      markdown: doc/Forth.md
+      name: Model
+    "UI":
+      markdown: doc/Fifth.md
+      name: User Interface
+  categoryOrder: ["BLOC","Model","Helpers","Model","UI"]
+  # includeExternal: ['lib/bloc/login_bloc.dart', 'lib/bloc/logout_bloc.dart']
+  nodoc: ['lib/sekret/*.dart']
+  linkTo:
+    url: "https://my.dartdocumentationsite.org/dev/%v%"
+  showUndocumentedCategories: true
+  ignore:
+    - ambiguous-doc-reference
+  errors:
+    - unresolved-doc-reference
+  warnings:
+    - tool-error
