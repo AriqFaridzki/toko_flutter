@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "ci_flutter"
+		},
+		{
+			"path": "ciFlutter_be"
+		}
+	],
+	"settings": {}
+}
