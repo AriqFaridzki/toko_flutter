@@ -77,7 +77,7 @@ pastikan ada pubspec.yaml didalamnya
 setelah itu masuk ke project directory, pastikan ada composer.json didalamnya
 setelah itu jalankan
 ```
-composer require
+composer install
 ```
 
 #### Database
