@@ -77,7 +77,7 @@ pastikan ada pubspec.yaml didalamnya
 setelah itu masuk ke project directory, pastikan ada composer.json didalamnya
 setelah itu jalankan
 ```
-composer require
+composer install
 ```
 
 #### Database
@@ -94,12 +94,12 @@ Say what the step will be
 
 #### Flutter Setup
 
-Mengubah File api_url.dart di lib/helpers/ :
+<!-- Mengubah File api_url.dart di lib/helpers/ :
 ubah base_url dengan url yang dikeluarkan oleh API CI4
 
 ```
 static const String baseUrl = 'http://your_link';
-```
+``` -->
 
 setelah itu jalankan
 ```

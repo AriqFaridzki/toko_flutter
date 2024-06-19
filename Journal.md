@@ -33,3 +33,8 @@
 
 5. **Problem**: gagal login karena tidak menyimpan token
     - **Solution**: di file helpers api melupakan untuk menambahkan function Encode dalam data body (POST), karena kegagalan merequest ke api untuk data login
+
+## Todo
+
+- buat app berjalan di hp!
+- containerize it
