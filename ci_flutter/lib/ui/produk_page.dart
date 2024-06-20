@@ -127,10 +127,145 @@ class _ProdukPageState extends State<ProdukPage> {
             );
           }
 
-          return ListProduk(list: snapshot.data);
+          return CustomScrollView(slivers: [
+            /// promos
+            AddNewTitleSection(
+              titleName: "Welcome Home",
+            ),
+
+            SliverToBoxAdapter(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 0), // container margin
+                height: 150,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal:
+                                15), // margin for each container inside of it
+                        width: 280,
+                        color: Color.fromARGB(217, 215 + index, 202, 15),
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: 20, top: 24, right: 20),
+                                child: textContent(
+                                  text: "30% OFF During Weekend ",
+                                  fontSize: 20,
+                                )),
+                            Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: textContent(
+                                  text: "subtitle",
+                                  fontSize: 13,
+                                ))
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+            ),
+
+            // Categories
+            AddNewTitleSection(
+              titleName: "Categories",
+            ),
+
+            SliverToBoxAdapter(
+              child: Container(
+                margin:
+                    EdgeInsets.symmetric(horizontal: 10), // container margin
+                height: 60,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal:
+                                15), // margin for each container inside of it
+                        width: 60,
+                        color: Colors.amber[300],
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Center(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(vertical: 15),
+                                child: Icon(
+                                  Icons.ac_unit,
+                                  color: Colors.white,
+                                  size: 30,
+                                  semanticLabel:
+                                      'Text to announce in accessibility modes',
+                                ),
+                              ),
+                            )
+                            // Padding(
+                            //     padding: EdgeInsets.symmetric(
+                            //         // padding inside each container
+                            //         vertical: 20,
+                            //         horizontal: 20)),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+            ),
+
+            /// Product
+            AddNewTitleSection(
+              titleName: "Recommended Products",
+            ),
+
+            /// Product Grid
+            SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                sliver: SliverGrid(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20,
+                      childAspectRatio: 0.6),
+                  delegate: SliverChildBuilderDelegate((context, index) {
+                    return ItemProduk(produk: snapshot.data![index]);
+                  }, childCount: snapshot.data?.length ?? 0),
+                ))
+          ]);
         },
       ),
     );
+  }
+}
+
+class textContent extends StatelessWidget {
+  const textContent({super.key, required this.text, required this.fontSize});
+
+  final String text;
+  final double fontSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w400));
+  }
+}
+
+class AddNewTitleSection extends StatelessWidget {
+  const AddNewTitleSection({super.key, required this.titleName});
+
+  final String titleName;
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverToBoxAdapter(
+        child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            child: textContent(text: titleName, fontSize: 24)));
   }
 }
 
@@ -181,9 +316,35 @@ class ItemProduk extends StatelessWidget {
         );
       },
       child: Card(
-        child: ListTile(
-          title: Text(produk.namaProduk!),
-          subtitle: Text(produk.hargaProduk.toString()),
+        child: Column(
+          children: [
+            // Container(width: 20, height: 100, color: Colors.amber),
+
+            Container(
+                height: 200,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: SizedBox.fromSize(
+                    // size: Size.fromRadius,
+                    child: Image.network(
+                      "https://picsum.photos/500/520",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                )),
+            ListTile(
+              title: Text(
+                produk.namaProduk!,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              subtitle: Text(
+                produk.hargaProduk.toString(),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
         ),
       ),
     );

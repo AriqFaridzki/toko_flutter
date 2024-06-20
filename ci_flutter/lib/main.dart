@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences_tools/shared_preferences_tools.dart';
 import '/ui/login_page.dart';
 import '/ui/produk_page.dart';
+import '/ui/test.dart';
 import '/helpers/user_info.dart';
 
 void main() async {
-  ;
   await SharedPreferencesToolsDebug.init();
   runApp(const MyApp());
 }
