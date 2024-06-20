@@ -50,7 +50,7 @@ class _ProdukPageState extends State<ProdukPage> {
       appBar: AppBar(
         title: const Text('List Produk'),
 
-        /// `action` ini adalah properti dari [appBar] yang nanti akan menerima daftar widget
+        /// `action` ini adalah properti dari [appBar] yang akan ditampilkan setelah title
         ///
         /// daftar widget ini salah satunya [Padding], yang nantinya ditambahkan icon
         actions: [
@@ -69,6 +69,19 @@ class _ProdukPageState extends State<ProdukPage> {
               },
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              child: const Icon(Icons.account_circle_rounded, size: 26.0),
+              onTap: () async {
+                /// pergi ke halaman produk form
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProdukForm()),
+                );
+              },
+            ),
+          )
         ],
       ),
 
@@ -142,11 +155,14 @@ class _ProdukPageState extends State<ProdukPage> {
                     itemCount: 5,
                     itemBuilder: (context, index) {
                       return Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.0),
+                            color: Color.fromARGB(217, 215 + index, 202, 15)),
                         margin: EdgeInsets.symmetric(
                             horizontal:
                                 15), // margin for each container inside of it
                         width: 280,
-                        color: Color.fromARGB(217, 215 + index, 202, 15),
+
                         child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -185,11 +201,14 @@ class _ProdukPageState extends State<ProdukPage> {
                     itemCount: 5,
                     itemBuilder: (context, index) {
                       return Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.0),
+                            color: Color.fromARGB(217, 215 + index, 202, 15)),
                         margin: EdgeInsets.symmetric(
                             horizontal:
                                 15), // margin for each container inside of it
                         width: 60,
-                        color: Colors.amber[300],
+                        // color: Colors.amber[300],
                         child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
