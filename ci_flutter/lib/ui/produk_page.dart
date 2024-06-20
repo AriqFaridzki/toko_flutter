@@ -72,7 +72,7 @@ class _ProdukPageState extends State<ProdukPage> {
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              child: const Icon(Icons.account_circle_rounded, size: 26.0),
+              child: const Icon(Icons.shopping_basket, size: 26.0),
               onTap: () async {
                 /// pergi ke halaman produk form
                 Navigator.push(
