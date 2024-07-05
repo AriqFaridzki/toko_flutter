@@ -47,7 +47,7 @@ library ApiUrl;
 
 class ApiUrl {
   /// memanggil base URL target API
-  static const String baseUrl = 'http://localhost:8080';
+  static const String baseUrl = 'http://192.168.203.100:8080';
 
   /// Endpoint untuk registrasi
   static const String registrasi = baseUrl + '/registrasi';
