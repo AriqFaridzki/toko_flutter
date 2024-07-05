@@ -88,9 +88,6 @@ composer install
 
 
 ### Setup Development
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
 
 #### Flutter Setup
 
@@ -120,6 +117,14 @@ jalankan ini didalam project CI4 (ciFlutter_be)
 ```
 php spark serve
 ```
+
+jika ingin menggunakan api menggunakan device asli
+
+```
+php spark serve --host your_ip  
+```
+* jangan lupa untuk edit base_url pada file api_url.dart di bagian flutter
+
 
 <!-- ## 🔧 Running the tests <a name = "tests"></a>
 Explain how to run the automated tests for this system.
