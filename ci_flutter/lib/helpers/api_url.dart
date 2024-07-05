@@ -47,9 +47,9 @@ library ApiUrl;
 
 class ApiUrl {
   /// memanggil base URL target API
-  // static const String baseUrl = 'http://localhost:8080'; // for emulator
-  static const String baseUrl =
-      'http://192.168.100.104:8080'; // for real devices
+  static const String baseUrl = 'http://localhost:8080'; // for emulator
+  // static const String baseUrl =
+  // 'http://192.168.100.104:8080'; // for real devices
 
   /// Endpoint untuk registrasi
   static const String registrasi = baseUrl + '/registrasi';

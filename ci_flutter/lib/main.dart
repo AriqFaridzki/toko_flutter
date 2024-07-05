@@ -6,7 +6,7 @@ import '/ui/test.dart';
 import '/helpers/user_info.dart';
 
 void main() async {
-  // await SharedPreferencesToolsDebug.init();
+  await SharedPreferencesToolsDebug.init();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }

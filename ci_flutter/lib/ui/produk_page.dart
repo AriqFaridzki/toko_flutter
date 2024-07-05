@@ -33,6 +33,7 @@ import '/model/produk.dart';
 import '/ui/login_page.dart';
 import '/ui/produk_detail.dart';
 import '/ui/produk_form.dart';
+import '/ui/produk_detail_public.dart';
 
 /// {@category UI}
 /// Halaman utama untuk menampilkan daftar produk.
@@ -330,7 +331,7 @@ class ItemProduk extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ProdukDetail(produk: produk),
+            builder: (context) => ProdukDetailPublic(produk: produk),
           ),
         );
       },
